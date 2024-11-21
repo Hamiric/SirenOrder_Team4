@@ -11,6 +11,8 @@ class ItemAddPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        centerTitle: true,
+        title: const Text('Siren'),
       ),
       body: SafeArea(
         child: ListView(
