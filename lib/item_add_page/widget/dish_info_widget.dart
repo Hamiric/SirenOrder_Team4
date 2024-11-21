@@ -29,6 +29,9 @@ class DishInfoWidget extends StatelessWidget {
             maxLines: 1,
             decoration: InputDecoration(
               hintText: '메뉴 이름을 입력해 주세요.',
+              hintStyle: TextStyle(
+                color: Colors.grey,
+              ),
               border: OutlineInputBorder(),
             ),
           ),
@@ -53,6 +56,9 @@ class DishInfoWidget extends StatelessWidget {
             decoration: const InputDecoration(
               prefixIcon: Icon(Icons.attach_money),
               hintText: '가격을 입력해 주세요.',
+              hintStyle: TextStyle(
+                color: Colors.grey,
+              ),
               border: OutlineInputBorder(),
             ),
           ),
@@ -73,7 +79,9 @@ class DishInfoWidget extends StatelessWidget {
               border: OutlineInputBorder(),
             ),
           ),
-          const SizedBox(height: 120,),
+          const SizedBox(
+            height: 120,
+          ),
         ],
       ),
     );
