@@ -10,7 +10,8 @@ class ItemAddPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(),
+      appBar: AppBar(
+      ),
       body: SafeArea(
         child: ListView(
           scrollDirection: Axis.vertical,

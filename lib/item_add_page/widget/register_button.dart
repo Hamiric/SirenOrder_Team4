@@ -9,6 +9,11 @@ class RegisterButton extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 20),
       child: ElevatedButton(
         onPressed: () {},
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
         child: Container(
           color: Colors.transparent,
           width: MediaQuery.of(context).size.width - 80,
