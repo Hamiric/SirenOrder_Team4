@@ -37,6 +37,7 @@ class _ItemAddPageState extends State<ItemAddPage> {
           child: ListView(
             scrollDirection: Axis.vertical,
             children: [
+              // 이미지 피커 위젯
               ImagePickerWidget(
                 imagePicker: imagePicker,
                 selectedImage: selectedImage,
@@ -46,6 +47,7 @@ class _ItemAddPageState extends State<ItemAddPage> {
                   });
                 },
               ),
+              // Text 입력 필드
               DishInfoWidget(
                 menuNameController: menuNameController,
                 menuSubNameController: menuSubNameController,
@@ -56,6 +58,7 @@ class _ItemAddPageState extends State<ItemAddPage> {
           ),
         ),
       ),
+      // 등록 버튼
       bottomNavigationBar: RegisterButton(
         menuNameController: menuNameController,
         menuSubNameController: menuSubNameController,

@@ -33,7 +33,16 @@ class RegisterButton extends StatelessWidget {
             menuDescriptionController,
             selectedImage);
 
-        showCupertino(context, is_showCupertino);
+        // is_showCupertino 값이 true일경우, Drink 데이터 넘김
+        // is_showCupertino 값이 false일 경우, 메뉴등록실패
+        showCupertino(
+            context,
+            is_showCupertino,
+            menuNameController,
+            menuSubNameController,
+            menuPriceController,
+            menuDescriptionController,
+            selectedImage);
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color(0xff674636),
@@ -78,7 +87,14 @@ bool checkShowCupertino(
 }
 
 // CupertinoDialog를 띄우는 함수
-void showCupertino(BuildContext context, bool is_approve) {
+void showCupertino(
+    BuildContext context,
+    bool is_approve,
+    TextEditingController menuNameController,
+    TextEditingController menuSubNameController,
+    TextEditingController menuPriceController,
+    TextEditingController menuDescriptionController,
+    XFile? selectedImage) {
   String refuseRegistration = '메뉴 등록 실패';
   String approveRegistration = '메뉴 등록 완료';
 
@@ -96,13 +112,30 @@ void showCupertino(BuildContext context, bool is_approve) {
               child: const Text('확인'),
               onPressed: () {
                 if (is_approve) {
-                  // Drink 객체 만들어서 넘겨주고
-
+                  // 등록 성공했을 경우 Drink 객체 만들어서 데이터 넘겨주기
+                  Drink newDrink = Drink(
+                    name: menuNameController.text,
+                    code: menuSubNameController.text,
+                    img: selectedImage!.path,
+                    description: menuDescriptionController.text,
+                    price: int.parse(menuPriceController.text),
+                    count: 0,
+                    isFavorite: false,
+                  );
+                  
+                  /*
                   // item_list_page로
-                  Navigator.pop(context);
-                  // Navigator.pop(context);
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    CupertinoDialogRoute(
+                      builder: (context) => ItemListPage(drink: newDrink),
+                      context: context
+                    ),
+                    (route) => false,
+                  );
+                  */
                 } else {
-                  // 팝업만 끄기
+                  // 실패했을 경우 팝업만 끄기
                   Navigator.pop(context);
                 }
               },
