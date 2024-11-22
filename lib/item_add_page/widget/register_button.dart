@@ -102,14 +102,28 @@ void showCupertino(
       context: context,
       builder: (context) {
         return CupertinoAlertDialog(
-          title: Text(
-            is_approve ? approveRegistration : refuseRegistration,
+          title: SizedBox(
+            height: 80,
+            child: Center(
+              child: Text(
+                is_approve ? approveRegistration : refuseRegistration,
+                style: const TextStyle(
+                  fontWeight: FontWeight.normal
+                ),
+              ),
+            ),
           ),
           content: is_approve ? null : const Text('빈칸이 없는지 다시 확인해 주세요.'),
           actions: [
             CupertinoDialogAction(
               isDefaultAction: true,
-              child: const Text('확인'),
+              child: const Text(
+                '확인',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               onPressed: () {
                 if (is_approve) {
                   // 등록 성공했을 경우 Drink 객체 만들어서 데이터 넘겨주기

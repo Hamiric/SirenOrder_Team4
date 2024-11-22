@@ -43,11 +43,17 @@ class DishInfoWidget extends StatelessWidget {
           TextField(
             controller: menuNameController,
             maxLines: 1,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.normal,
+            ),
             decoration: const InputDecoration(
               hintText: '이름을 입력해주세요.',
               hintStyle: TextStyle(
                 color: Colors.grey,
               ),
+              isDense: true,
+              contentPadding: EdgeInsets.only(top: 10, bottom: 2),
             ),
             onChanged: (text) {},
           ),
@@ -56,7 +62,8 @@ class DishInfoWidget extends StatelessWidget {
             controller: menuSubNameController,
             maxLines: 1,
             style: const TextStyle(
-              fontSize: 12,
+              fontSize: 14,
+              color: Color.fromARGB(255, 160, 173, 132),
             ),
             inputFormatters: [
               // 영어, 숫자, 공백만 입력
@@ -66,9 +73,11 @@ class DishInfoWidget extends StatelessWidget {
             decoration: const InputDecoration(
               hintText: '영문 이름을 입력해주세요.',
               hintStyle: TextStyle(
-                fontSize: 12,
+                fontSize: 14,
                 color: Colors.grey,
               ),
+              isDense: true,
+              contentPadding: EdgeInsets.only(top: 10, bottom: 2),
             ),
             onChanged: (text) {},
           ),
@@ -95,6 +104,10 @@ class DishInfoWidget extends StatelessWidget {
           TextField(
             controller: menuDescriptionController,
             maxLines: 12,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.normal,
+            ),
             decoration: const InputDecoration(
               hintText: '메뉴에 대해 설명해주세요!',
               hintStyle: TextStyle(
