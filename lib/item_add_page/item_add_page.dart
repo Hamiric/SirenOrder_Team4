@@ -27,6 +27,8 @@ class _ItemAddPageState extends State<ItemAddPage> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Siren'),
+        backgroundColor: Colors.transparent,
+        scrolledUnderElevation: 0,
       ),
       body: SafeArea(
         child: GestureDetector(
