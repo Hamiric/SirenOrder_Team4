@@ -15,12 +15,18 @@ class ItemAddPage extends StatelessWidget {
         title: const Text('Siren'),
       ),
       body: SafeArea(
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          children: const [
-            ImagePickerWidget(),
-            DishInfoWidget(),
-          ],
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () {
+            FocusScope.of(context).unfocus();
+          },
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            children: const [
+              ImagePickerWidget(),
+              DishInfoWidget(),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: const RegisterButton(),

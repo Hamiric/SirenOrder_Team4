@@ -38,6 +38,23 @@ class DishInfoWidget extends StatelessWidget {
               ),
             ),
           ),
+          TextField(
+            maxLines: 1,
+            style: const TextStyle(
+              fontSize: 12,
+            ),
+            inputFormatters: [
+              FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z0-9 ]')),
+            ],
+            keyboardType: TextInputType.text,
+            decoration: const InputDecoration(
+              hintText: '영문 이름을 입력해주세요.',
+              hintStyle: TextStyle(
+                fontSize: 12,
+                color: Colors.grey,
+              ),
+            ),
+          ),
           const SizedBox(height: 10),
           TextField(
             maxLines: 1,
