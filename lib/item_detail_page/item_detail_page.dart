@@ -8,12 +8,12 @@ class ItemDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Padding(
-        padding: const EdgeInsets.only(top: 10),
-        child: PreferredSize(
-          preferredSize: const Size.fromHeight(100),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(100),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 17),
           child: AppBar(
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.transparent,
               title: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
