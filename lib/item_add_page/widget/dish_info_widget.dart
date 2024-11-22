@@ -2,7 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class DishInfoWidget extends StatelessWidget {
-  const DishInfoWidget({super.key});
+  const DishInfoWidget(
+      {super.key,
+      required this.menuNameController,
+      required this.menuSubNameController,
+      required this.menuPriceController,
+      required this.menuDescriptionController});
+
+  final TextEditingController menuNameController;
+  final TextEditingController menuSubNameController;
+  final TextEditingController menuPriceController;
+  final TextEditingController menuDescriptionController;
 
   @override
   Widget build(BuildContext context) {
@@ -29,16 +39,19 @@ class DishInfoWidget extends StatelessWidget {
               )
             ],
           ),
-          const TextField(
+          TextField(
+            controller: menuNameController,
             maxLines: 1,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: '이름을 입력해주세요.',
               hintStyle: TextStyle(
                 color: Colors.grey,
               ),
             ),
+            onChanged: (text) {},
           ),
           TextField(
+            controller: menuSubNameController,
             maxLines: 1,
             style: const TextStyle(
               fontSize: 12,
@@ -54,9 +67,11 @@ class DishInfoWidget extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
+            onChanged: (text) {},
           ),
           const SizedBox(height: 10),
           TextField(
+            controller: menuPriceController,
             maxLines: 1,
             inputFormatters: [
               FilteringTextInputFormatter.digitsOnly,
@@ -68,17 +83,20 @@ class DishInfoWidget extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
+            onChanged: (text) {},
           ),
           const SizedBox(height: 30),
-          const TextField(
+          TextField(
+            controller: menuDescriptionController,
             maxLines: 12,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: '메뉴에 대해 설명해주세요!',
               hintStyle: TextStyle(
                 color: Colors.grey,
               ),
               border: OutlineInputBorder(),
             ),
+            onChanged: (text) {},
           ),
           const SizedBox(
             height: 30,

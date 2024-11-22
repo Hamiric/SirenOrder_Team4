@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ImagePickerWidget extends StatelessWidget {
-  const ImagePickerWidget(
-      {super.key,
-      required this.imagePicker,
-      required this.selectedImage,
-      required this.imageSelected});
+  const ImagePickerWidget({
+    super.key,
+    required this.imagePicker,
+    required this.selectedImage,
+    required this.imageSelected,
+  });
 
   final ImagePicker imagePicker;
   final XFile? selectedImage;

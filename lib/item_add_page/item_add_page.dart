@@ -15,6 +15,11 @@ class _ItemAddPageState extends State<ItemAddPage> {
   final ImagePicker imagePicker = ImagePicker();
   XFile? selectedImage;
 
+  final menuNameController = TextEditingController();
+  final menuSubNameController = TextEditingController();
+  final menuPriceController = TextEditingController();
+  final menuDescriptionController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,12 +46,32 @@ class _ItemAddPageState extends State<ItemAddPage> {
                   });
                 },
               ),
-              const DishInfoWidget(),
+              DishInfoWidget(
+                menuNameController: menuNameController,
+                menuSubNameController: menuSubNameController,
+                menuPriceController: menuPriceController,
+                menuDescriptionController: menuDescriptionController,
+              ),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: const RegisterButton(),
+      bottomNavigationBar: RegisterButton(
+        menuNameController: menuNameController,
+        menuSubNameController: menuSubNameController,
+        menuPriceController: menuPriceController,
+        menuDescriptionController: menuDescriptionController,
+        selectedImage: selectedImage,
+      ),
     );
+  }
+
+  @override
+  void dispose() {
+    menuNameController.dispose();
+    menuSubNameController.dispose();
+    menuPriceController.dispose();
+    menuDescriptionController.dispose();
+    super.dispose();
   }
 }
