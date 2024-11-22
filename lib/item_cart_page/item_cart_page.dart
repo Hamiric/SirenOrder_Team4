@@ -205,16 +205,16 @@ class _ItemCartPageState extends State<ItemCartPage> {
                               title: Text('삭제하시겠습니까?'),
                               actions: [
                                 CupertinoDialogAction(
-                                  child: const Text(
-                                    '삭제',
-                                    style: TextStyle(color: Colors.red),
-                                  ),
+                                  child: const Text('취소'),
                                   onPressed: () {
                                     Navigator.of(context).pop();
                                   },
                                 ),
                                 CupertinoDialogAction(
-                                  child: const Text('확인'),
+                                  child: const Text(
+                                    '삭제',
+                                    style: TextStyle(color: Colors.red),
+                                  ),
                                   onPressed: () {
                                     setState(() {
                                       try {
