@@ -5,26 +5,23 @@ class RegisterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
+    return ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color(0xff674636),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
         ),
-        child: Container(
-          color: Colors.transparent,
-          width: MediaQuery.of(context).size.width - 80,
-          height: 50,
-          child: const Center(
-            child: Text(
-              '등록하기',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 24,
-              ),
+      ),
+      child: Container(
+        color: Colors.transparent,
+        height: 80,
+        child: const Center(
+          child: Text(
+            '등록하기',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
             ),
           ),
         ),

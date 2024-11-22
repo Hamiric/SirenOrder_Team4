@@ -7,80 +7,64 @@ class DishInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 20,
+            height: 30,
           ),
-          const Text(
-            '메뉴이름',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(
-            height: 8,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'MENU',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.grey[700],
+                ),
+              ),
+              const Divider(
+                thickness: 1,
+              )
+            ],
           ),
           const TextField(
-            maxLength: 20,
             maxLines: 1,
             decoration: InputDecoration(
-              hintText: '메뉴 이름을 입력해 주세요.',
+              hintText: '이름을 입력해주세요.',
               hintStyle: TextStyle(
                 color: Colors.grey,
               ),
-              border: OutlineInputBorder(),
             ),
           ),
-          const SizedBox(height: 20),
-          const Text(
-            '예상가격',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(
-            height: 8,
-          ),
+          const SizedBox(height: 10),
           TextField(
-            maxLength: 30,
             maxLines: 1,
             inputFormatters: [
               FilteringTextInputFormatter.digitsOnly,
             ],
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
-              prefixIcon: Icon(Icons.attach_money),
-              hintText: '가격을 입력해 주세요.',
+              hintText: '₩ 가격을 입력해 주세요.',
+              hintStyle: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
+          ),
+          const SizedBox(height: 30),
+          const TextField(
+            maxLines: 12,
+            decoration: InputDecoration(
+              hintText: '메뉴에 대해 설명해주세요!',
               hintStyle: TextStyle(
                 color: Colors.grey,
               ),
               border: OutlineInputBorder(),
             ),
           ),
-          const SizedBox(height: 20),
-          const Text(
-            '메뉴설명',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
           const SizedBox(
-            height: 8,
-          ),
-          const TextField(
-            maxLines: 10,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-            ),
-          ),
-          const SizedBox(
-            height: 120,
+            height: 30,
           ),
         ],
       ),

@@ -17,14 +17,13 @@ class ItemAddPage extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           scrollDirection: Axis.vertical,
-          children: [
+          children: const [
             ImagePickerWidget(),
             DishInfoWidget(),
           ],
         ),
       ),
-      floatingActionButton: RegisterButton(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      bottomNavigationBar: const RegisterButton(),
     );
   }
 }

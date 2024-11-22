@@ -6,9 +6,17 @@ class ImagePickerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 230,
-      decoration: BoxDecoration(
-        color: Colors.grey,
+      height: 300,
+      decoration: const BoxDecoration(
+        color: Color(0xffFFF8E8),
+      ),
+      child: const Center(
+        child: Text(
+          'image',
+          style: TextStyle(
+            color: Colors.grey
+          ),
+        ),
       ),
     );
   }
