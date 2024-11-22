@@ -7,7 +7,22 @@ class ItemDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: const Text('Siren'),
+            title: Text.rich(
+                TextSpan(
+                    children: [
+                        TextSpan(
+                            text: 'S',
+                            style: TextStyle(
+                                color: Color(0xFFAAB396),
+                                fontSize: 32,
+                            ),
+                        ),
+                    ] 
+                ),
+            ),
+            centerTitle: true,
+            backgroundColor: Colors.white,
+            
         ),
     );
   }

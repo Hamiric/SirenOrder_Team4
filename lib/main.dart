@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         '/item_cart_page': (context) => const ItemCartPage(),
         '/item_detail_page': (context) => const ItemDetailPage(),
       },
-      initialRoute: '/item_detail_page',
+      initialRoute: '/item_add_page',
     );
   }
 }
