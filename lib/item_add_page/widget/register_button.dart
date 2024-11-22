@@ -75,10 +75,10 @@ bool checkShowCupertino(
     TextEditingController menuPriceController,
     TextEditingController menuDescriptionController,
     XFile? selectedImage) {
-  if (menuNameController.text != '' &&
-      menuSubNameController.text != '' &&
-      menuPriceController.text != '' &&
-      menuDescriptionController.text != '' &&
+  if (menuNameController.text.isNotEmpty &&
+      menuSubNameController.text.isNotEmpty &&
+      menuPriceController.text.isNotEmpty &&
+      menuDescriptionController.text.trim().isNotEmpty &&
       selectedImage != null) {
     return true;
   } else {
@@ -134,6 +134,8 @@ void showCupertino(
                     (route) => false,
                   );
                   */
+
+                  Navigator.pop(context);
                 } else {
                   // 실패했을 경우 팝업만 끄기
                   Navigator.pop(context);

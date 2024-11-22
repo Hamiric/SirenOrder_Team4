@@ -39,6 +39,7 @@ class DishInfoWidget extends StatelessWidget {
               )
             ],
           ),
+          // Name 입력창
           TextField(
             controller: menuNameController,
             maxLines: 1,
@@ -50,6 +51,7 @@ class DishInfoWidget extends StatelessWidget {
             ),
             onChanged: (text) {},
           ),
+          // SubName 입력창
           TextField(
             controller: menuSubNameController,
             maxLines: 1,
@@ -57,6 +59,7 @@ class DishInfoWidget extends StatelessWidget {
               fontSize: 12,
             ),
             inputFormatters: [
+              // 영어, 숫자, 공백만 입력
               FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z0-9 ]')),
             ],
             keyboardType: TextInputType.text,
@@ -70,10 +73,12 @@ class DishInfoWidget extends StatelessWidget {
             onChanged: (text) {},
           ),
           const SizedBox(height: 10),
+          // Price 입력창
           TextField(
             controller: menuPriceController,
             maxLines: 1,
             inputFormatters: [
+              // 숫자만 입력
               FilteringTextInputFormatter.digitsOnly,
             ],
             keyboardType: TextInputType.number,
@@ -86,6 +91,7 @@ class DishInfoWidget extends StatelessWidget {
             onChanged: (text) {},
           ),
           const SizedBox(height: 30),
+          // Description 입력창
           TextField(
             controller: menuDescriptionController,
             maxLines: 12,
