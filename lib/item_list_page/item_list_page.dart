@@ -44,7 +44,8 @@ class ItemListPage extends StatelessWidget {
           return ListTile(
             leading: CircleAvatar(
               backgroundImage: is_CheckImageFile(drinkList[index].img) ? FileImage(File(drinkList[index].img)) : AssetImage(drinkList[index].img),
-              backgroundColor: Color(0xFFAAB396), radius: 40),
+              backgroundColor: Color(0xFFAAB396), radius: 40
+            ),
             title: Text(drinkList[index].name),
             subtitle: Text('${drinkList[index].price} 원'),
             onTap: () {
@@ -66,6 +67,7 @@ class ItemListPage extends StatelessWidget {
     );
   }
 
+  // CircleAvatar에 들어갈 이미지 형태가 2종류라서 체크하는 함수
   // false = assets, true = XFile
   bool is_CheckImageFile(String img){
     List<String> splitImgPath = img.split('/');
