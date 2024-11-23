@@ -153,6 +153,7 @@ void showCupertino(
                 } else {
                   // 실패했을 경우 팝업만 끄기
                   Navigator.pop(context);
+                  FocusScope.of(context).unfocus();
                 }
               },
             )

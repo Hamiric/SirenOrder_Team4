@@ -4,6 +4,8 @@ import 'package:team4_groupproject/item_add_page/widget/dish_info_widget.dart';
 import 'package:team4_groupproject/item_add_page/widget/image_picker_widget.dart';
 import 'package:team4_groupproject/item_add_page/widget/register_button.dart';
 
+import '../item_detail_page/widget/siren_app_bar.dart';
+
 class ItemAddPage extends StatefulWidget {
   const ItemAddPage({super.key});
 
@@ -24,12 +26,7 @@ class _ItemAddPageState extends State<ItemAddPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Siren'),
-        backgroundColor: Colors.transparent,
-        scrolledUnderElevation: 0,
-      ),
+      appBar: SirenAppBar(),
       body: SafeArea(
         child: GestureDetector(
           behavior: HitTestBehavior.opaque,
