@@ -26,7 +26,7 @@ class _ItemAddPageState extends State<ItemAddPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: SirenAppBar(),
+      appBar: const SirenAppBar(),
       body: SafeArea(
         child: GestureDetector(
           behavior: HitTestBehavior.opaque,
