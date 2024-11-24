@@ -15,10 +15,7 @@ class SirenAppBar extends StatelessWidget implements PreferredSizeWidget{
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconButton(
-                  icon: const Icon(Icons.chevron_left, color: Colors.black),
-                  onPressed: () {},
-                ),
+                SizedBox(width: 0),
                 Text.rich(
                   TextSpan(children: [
                     TextSpan(
