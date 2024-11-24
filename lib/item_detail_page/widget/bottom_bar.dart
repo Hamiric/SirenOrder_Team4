@@ -15,9 +15,6 @@ class BottomBar extends StatelessWidget {
     required this.onQuantityChanged,
   });
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,22 +23,49 @@ class BottomBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: Color(0xff674636),
       ),
-      child: Row(
-        children: [
-          CounterWidget(
-            quantity: quantity,
-            onQuantityChanged: onQuantityChanged,
-          ),
-          Column(
-            children: [
-              Text('TOTAL'),
-              Text('$totalPrice원'),
-            ],
-          ),
-          PurchaseButton(
-            totalPrice: totalPrice,
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 9),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CounterWidget(
+              quantity: quantity,
+              onQuantityChanged: onQuantityChanged,
+            ),
+
+            Expanded(
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 18,
+                    left: 28,
+                    child: Text(
+                      'TOTAL',
+                      style: TextStyle(fontSize: 16, color: Colors.white),
+                    )),
+                  Positioned(
+                    bottom: 20,
+                    right: 28,
+                    child: Text(
+                      '$totalPrice원',
+                      style: TextStyle(
+                        fontSize: 15, 
+                        color: Colors.white
+                      ),
+                    )),
+                ],
+              ),
+            ),
+
+            Align(
+              alignment: Alignment.centerRight,
+              child: PurchaseButton(
+                quantity: quantity,
+              ),
+            ),
+            SizedBox(width: 5),
+          ],
+        ),
       ),
     ); 
   }
