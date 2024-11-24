@@ -1,14 +1,48 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:team4_groupproject/item_detail_page/widget/bottom_bar_widget/counter_widget.dart';
+import 'package:team4_groupproject/item_detail_page/widget/bottom_bar_widget/purchase_button.dart';
 
 class BottomBar extends StatelessWidget {
+  final int quantity;
+  final int totalPrice;
+  final ValueChanged<int> onQuantityChanged;
+  
+  const BottomBar({
+    required this.quantity,
+    required this.totalPrice,
+    required this.onQuantityChanged,
+  });
+
+
+
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CounterWidget(),
-      ],
+    return Container(
+      height: 84,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Color(0xff674636),
+      ),
+      child: Row(
+        children: [
+          CounterWidget(
+            quantity: quantity,
+            onQuantityChanged: onQuantityChanged,
+          ),
+          Column(
+            children: [
+              Text('TOTAL'),
+              Text('$totalPrice원'),
+            ],
+          ),
+          PurchaseButton(
+            totalPrice: totalPrice,
+          ),
+        ],
+      ),
     ); 
   }
 }
@@ -17,51 +51,4 @@ class BottomBar extends StatelessWidget {
 
 
 
-class CounterWidget extends StatefulWidget {
-  @override
-  State<CounterWidget> createState() => CounterWidgetState();
-}
 
-class CounterWidgetState extends State<CounterWidget> {
-  int _counter = 1; // 수량 변수
-
-  void _decrement() {
-    setState(() {
-        if (_counter > 1) _counter--; // 수량 >0 예외 처리
-    });
-  }
-
-  void _increment() {
-    setState(() {
-      if (_counter < 100) _counter++; // 수량 <100 예외 처리
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Color(0xffFFF8E8),
-        ),
-        child: Row(
-          children: [
-            IconButton(
-              onPressed: _decrement, 
-              icon: Icon(Icons.remove),
-            ),
-            Text(
-              '$_counter',
-              style: TextStyle(fontSize: 24),
-            ),
-            IconButton(
-              onPressed: _increment, 
-              icon: Icon(Icons.add),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
