@@ -99,7 +99,7 @@ void _completePopup(BuildContext context) {
               height: 45,
               child: Center(
                 child: Text(
-                  '장바구니에 담겼습니다.',
+                  '장바구니에 담겼습니다',
                   style: TextStyle(fontSize: 16, color: Colors.black),
                 ),
               ),
