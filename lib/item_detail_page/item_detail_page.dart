@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:team4_groupproject/drink.dart';
 import 'package:team4_groupproject/item_detail_page/widget/bottom_bar.dart';
@@ -46,7 +47,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
           Expanded(
             child: ListView(
               children: [
-                Image.asset('assets/menu.jpg'),
+                imageWidget(drink.img),
                 SizedBox(height: 35),
                 MenuScript(
                   isStarred: isStarred,
@@ -63,5 +64,14 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
         ],
       ),
     );
+  }
+}
+
+Image imageWidget(String imgPath) {
+  // imgPath가 assets 인지 file인지 확인, 반환
+  if (imgPath.startsWith('assets')) {
+    return Image.asset(imgPath, fit: BoxFit.cover);
+  } else {
+    return Image.file(File(imgPath), fit: BoxFit.cover);
   }
 }

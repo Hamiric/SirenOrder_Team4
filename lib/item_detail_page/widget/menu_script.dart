@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:team4_groupproject/drink.dart';
 
@@ -19,8 +21,6 @@ class MenuScript extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Drink drink = ModalRoute.of(context)!.settings.arguments as Drink;
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
@@ -94,3 +94,4 @@ class MenuScript extends StatelessWidget {
     );
   }
 }
+
