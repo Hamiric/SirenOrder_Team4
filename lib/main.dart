@@ -3,6 +3,7 @@ import 'package:team4_groupproject/item_add_page/item_add_page.dart';
 import 'package:team4_groupproject/item_cart_page/item_cart_page.dart';
 import 'package:team4_groupproject/item_detail_page/item_detail_page.dart';
 import 'package:team4_groupproject/item_list_page/item_list_page.dart';
+import 'package:team4_groupproject/splash/splash.dart';
 
 
 void main() {
@@ -26,8 +27,9 @@ class MyApp extends StatelessWidget {
         '/item_cart_page': (context) => const ItemCartPage(),
         '/item_detail_page': (context) => const ItemDetailPage(),
         '/item_list_page' : (context) => ItemListPage(),
+        '/splash' : (context) => const Splash(),
       },
-      initialRoute: '/item_list_page',
+      initialRoute: '/splash',
     );
   }
 }
