@@ -42,30 +42,32 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
         actionIcon: Icons.share_outlined,
         onAcionPressed: () {},
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView(
-              children: [
-                Container(
-                  width: 413,
-                  height: 297,
-                  child: imageWidget(drink.img),
-                ),
-                SizedBox(height: 35),
-                MenuScript(
-                  isStarred: isStarred,
-                  onStarTouch: touchStar,
-                  drink: drink,
-                ),
-              ],
-            )),
-          BottomBar(
-            quantity: _quantity,
-            totalPrice: _totalPrice,
-            onQuantityChanged: _changeQuantity,
-          ),
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView(
+                children: [
+                  Container(
+                    width: 413,
+                    height: 297,
+                    child: imageWidget(drink.img),
+                  ),
+                  SizedBox(height: 35),
+                  MenuScript(
+                    isStarred: isStarred,
+                    onStarTouch: touchStar,
+                    drink: drink,
+                  ),
+                ],
+              )),
+            BottomBar(
+              quantity: _quantity,
+              totalPrice: _totalPrice,
+              onQuantityChanged: _changeQuantity,
+            ),
+          ],
+        ),
       ),
     );
   }
