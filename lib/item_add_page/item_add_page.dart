@@ -33,37 +33,42 @@ class _ItemAddPageState extends State<ItemAddPage> {
           onTap: () {
             FocusScope.of(context).unfocus();
           },
-          child: ListView(
-            scrollDirection: Axis.vertical,
+          child: Column(
             children: [
-              // 이미지 피커 위젯
-              ImagePickerWidget(
-                imagePicker: imagePicker,
-                selectedImage: selectedImage,
-                imageSelected: (image) {
-                  setState(() {
-                    selectedImage = image;
-                  });
-                },
+              Expanded(
+                child: ListView(
+                  scrollDirection: Axis.vertical,
+                  children: [
+                    // 이미지 피커 위젯
+                    ImagePickerWidget(
+                      imagePicker: imagePicker,
+                      selectedImage: selectedImage,
+                      imageSelected: (image) {
+                        setState(() {
+                          selectedImage = image;
+                        });
+                      },
+                    ),
+                    // Text 입력 필드
+                    DishInfoWidget(
+                      menuNameController: menuNameController,
+                      menuSubNameController: menuSubNameController,
+                      menuPriceController: menuPriceController,
+                      menuDescriptionController: menuDescriptionController,
+                    ),
+                  ],
+                ),
               ),
-              // Text 입력 필드
-              DishInfoWidget(
+              RegisterButton(
                 menuNameController: menuNameController,
                 menuSubNameController: menuSubNameController,
                 menuPriceController: menuPriceController,
                 menuDescriptionController: menuDescriptionController,
+                selectedImage: selectedImage,
               ),
             ],
           ),
         ),
-      ),
-      // 등록 버튼
-      bottomNavigationBar: RegisterButton(
-        menuNameController: menuNameController,
-        menuSubNameController: menuSubNameController,
-        menuPriceController: menuPriceController,
-        menuDescriptionController: menuDescriptionController,
-        selectedImage: selectedImage,
       ),
     );
   }
