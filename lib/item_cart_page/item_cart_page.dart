@@ -2,46 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:team4_groupproject/drink.dart';
 
-// 테스트용
-Drink d1 = Drink(
-  name: '초코 플랫 화이트',
-  code: 'Choco Flat White',
-  img: 'assets/images/coffee.jpg',
-  description: '',
-  price: 5000,
-  count: 1,
-  isFavorite: false,
-);
-Drink d2 = Drink(
-  name: '1234',
-  code: '222',
-  img: 'assets/images/coffee.jpg',
-  description: '',
-  price: 1000,
-  count: 1,
-  isFavorite: false,
-);
-Drink d3 = Drink(
-  name: 'asdf',
-  code: '',
-  img: 'asdf',
-  description: '',
-  price: 2000,
-  count: 1,
-  isFavorite: false,
-);
-Drink d4 = Drink(
-  name: '커피커피',
-  code: '',
-  img: 'assets/images/coffee.jpg',
-  description: '',
-  price: 4000,
-  count: 1,
-  isFavorite: false,
-);
-List<Drink> dList = [d1, d2, d3, d4];
-// List<Drink> dList = [];
-
 class ItemCartPage extends StatefulWidget {
   const ItemCartPage({super.key});
 
@@ -50,6 +10,27 @@ class ItemCartPage extends StatefulWidget {
 }
 
 class _ItemCartPageState extends State<ItemCartPage> {
+  Drink? newDrink;
+  List<Drink> dList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      newDrink = ModalRoute.of(context)?.settings.arguments as Drink?;
+      if (newDrink != null) {
+        int index = dList.indexWhere((drink) => drink.name == newDrink!.name);
+        if (index != -1) {
+          dList[index].count =
+              (dList[index].count + newDrink!.count).clamp(0, 99);
+        } else {
+          dList.add(newDrink!);
+        }
+        setState(() {});
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,25 +57,30 @@ class _ItemCartPageState extends State<ItemCartPage> {
               width: double.infinity,
               height: 84,
               child: ElevatedButton(
-                onPressed: () {
-                  showCupertinoDialog(
-                      context: context,
-                      builder: (context) {
-                        return CupertinoAlertDialog(
-                            title: Text('data'),
-                            content: Text('data'),
-                            actions: [
-                              CupertinoDialogAction(
-                                child: const Text(
-                                  '확인',
-                                ),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                              )
-                            ]);
-                      });
-                },
+                onPressed: dList.isNotEmpty
+                    ? () {
+                        showCupertinoDialog(
+                            context: context,
+                            builder: (context) {
+                              return CupertinoAlertDialog(
+                                  title: Text('구매가 완료되었습니다.'),
+                                  actions: [
+                                    CupertinoDialogAction(
+                                      child: const Text(
+                                        '확인',
+                                      ),
+                                      onPressed: () {
+                                        Navigator.of(context)
+                                            .pushNamedAndRemoveUntil(
+                                          '/item_list_page',
+                                          (Route<dynamic> route) => false,
+                                        );
+                                      },
+                                    )
+                                  ]);
+                            });
+                      }
+                    : null,
                 child: Text(
                   '구매하기',
                   style: TextStyle(color: Colors.white, fontSize: 16),
@@ -165,8 +151,7 @@ class _ItemCartPageState extends State<ItemCartPage> {
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            // 1 이하로 떨어지지 않게 처리 필요
-                            drink.count--;
+                            if (drink.count > 1) drink.count--;
                           });
                         },
                         child: Icon(Icons.remove),
@@ -178,8 +163,7 @@ class _ItemCartPageState extends State<ItemCartPage> {
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            // 99 이상으로 올라가지 않게 처리 필요
-                            drink.count++;
+                            if (drink.count < 99) drink.count++;
                           });
                         },
                         child: Icon(Icons.add),
