@@ -39,7 +39,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
     return Scaffold(
       appBar: SirenAppBar(
         actionIcon: Icons.share_outlined,
-        onAcionPressed: () {},
+        onActionPressed: () {},
       ),
       body: SafeArea(
         child: Column(

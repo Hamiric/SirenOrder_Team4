@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:team4_groupproject/drink.dart';
+import 'package:team4_groupproject/item_detail_page/widget/siren_app_bar.dart';
 
 List<Drink> drinkList = [
   Drink(
@@ -80,17 +81,11 @@ class ItemListPage extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Siren'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () {
-              Navigator.pushNamed(context, '/item_add_page');
-            },
-          ),
-        ],
+      appBar: SirenAppBar(
+        actionIcon: Icons.add, // AppBar의 우측 아이콘 설정
+        onActionPressed: () { // 아이콘 클릭 시 동작 설정
+          Navigator.pushNamed(context, '/item_add_page');
+        },
       ),
       body: ListView.builder(
         itemCount: drinkList.length,
@@ -112,12 +107,12 @@ class ItemListPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 4), // 간격 추가
+                const SizedBox(height: 4),
                 Text(
                   drinkList[index].code,
                   style: const TextStyle(
-                    fontSize: 12, // 작은 글씨 크기
-                    color: Colors.grey, // 회색 글씨
+                    fontSize: 12,
+                    color: Colors.grey,
                   ),
                 ),
               ],
@@ -145,7 +140,7 @@ class ItemListPage extends StatelessWidget {
       ),
     );
   }
-  
+
   // CircleAvatar에 들어갈 이미지 형태가 2종류라서 체크하는 함수
   // false = assets, true = XFile
   bool is_CheckImageFile(String img) {
