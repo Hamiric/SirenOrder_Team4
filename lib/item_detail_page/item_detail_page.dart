@@ -18,7 +18,6 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
   late Drink drink; // Drink 저장 변수
   int get _totalPrice => _quantity * _price; // 총 가격 계산 (getter)
   bool isStarred = false;
- 
 
   void _changeQuantity(int newQuantity) {
     setState(() {
@@ -45,25 +44,26 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
       body: Column(
         children: [
           Expanded(
-            child: ListView(
-              children: [
-                Container(
-                  width: 413,
-                  height: 297,
-                  child: imageWidget(drink.img),
-                ),
-                SizedBox(height: 35),
-                MenuScript(
-                  isStarred: isStarred,
-                  onStarTouch: touchStar,
-                  drink: drink,
-                ),
-              ],
-            )),
+              child: ListView(
+            children: [
+              Container(
+                width: 413,
+                height: 297,
+                child: imageWidget(drink.img),
+              ),
+              SizedBox(height: 35),
+              MenuScript(
+                isStarred: isStarred,
+                onStarTouch: touchStar,
+                drink: drink,
+              ),
+            ],
+          )),
           BottomBar(
             quantity: _quantity,
             totalPrice: _totalPrice,
             onQuantityChanged: _changeQuantity,
+            drink: drink,
           ),
         ],
       ),

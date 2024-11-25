@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:team4_groupproject/drink.dart';
+import 'package:team4_groupproject/item_list_page/item_list_page.dart';
 
 class ItemCartPage extends StatefulWidget {
   const ItemCartPage({super.key});
@@ -10,26 +11,7 @@ class ItemCartPage extends StatefulWidget {
 }
 
 class _ItemCartPageState extends State<ItemCartPage> {
-  Drink? newDrink;
-  List<Drink> dList = [];
-
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration.zero, () {
-      newDrink = ModalRoute.of(context)?.settings.arguments as Drink?;
-      if (newDrink != null) {
-        int index = dList.indexWhere((drink) => drink.name == newDrink!.name);
-        if (index != -1) {
-          dList[index].count =
-              (dList[index].count + newDrink!.count).clamp(0, 99);
-        } else {
-          dList.add(newDrink!);
-        }
-        setState(() {});
-      }
-    });
-  }
+  List<Drink> dList = drinkList.where((drink) => drink.count > 0).toList();
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +52,8 @@ class _ItemCartPageState extends State<ItemCartPage> {
                                         '확인',
                                       ),
                                       onPressed: () {
+                                        dList.forEach(
+                                            (drink) => drink.count = 0);
                                         Navigator.of(context)
                                             .pushNamedAndRemoveUntil(
                                           '/item_list_page',
@@ -88,9 +72,7 @@ class _ItemCartPageState extends State<ItemCartPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF674636),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20)),
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
                   ),
                 ),
               ),

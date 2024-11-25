@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'package:team4_groupproject/drink.dart';
 
 class PurchaseButton extends StatelessWidget {
   final String productName = '초코 플랫 화이트';
   final int quantity;
-  const PurchaseButton({required this.quantity});
-
+  final Drink drink;
+  const PurchaseButton({required this.quantity, required this.drink});
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +62,7 @@ class PurchaseButton extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
+                          drink.count += quantity;
                           Navigator.of(context).pop(); // 현재 팝업 닫기
                           _completePopup(context); // 구매 완료 팝업
                         },
@@ -91,40 +92,36 @@ void _completePopup(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        content: Padding(
-          padding: const EdgeInsets.only(top: 40),
-          child: Container(
-            width: 230,
-            height: 45,
-            child: Center(
-              child: Text(
-                '구매 완료',
-                style: TextStyle(
-                  fontSize: 16, 
-                  color: Colors.black
+          content: Padding(
+            padding: const EdgeInsets.only(top: 40),
+            child: Container(
+              width: 230,
+              height: 45,
+              child: Center(
+                child: Text(
+                  '장바구니에 담겼습니다.',
+                  style: TextStyle(fontSize: 16, color: Colors.black),
                 ),
               ),
             ),
           ),
-        ), 
-      actions: [
-        Center(
-          child: TextButton(
-            onPressed: () {
-              Navigator.of(context).pop(); // 구매완료 팝업 닫기
-            },
-            child: Text(
-              '확인',
-              style: TextStyle(
-                fontSize: 18, 
-                fontWeight: FontWeight.bold, 
-                letterSpacing: 2.0, 
-                color: Colors.black
+          actions: [
+            Center(
+              child: TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // 구매완료 팝업 닫기
+                },
+                child: Text(
+                  '확인',
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2.0,
+                      color: Colors.black),
+                ),
               ),
             ),
-          ),
-        ),
-      ]);
+          ]);
     },
   );
 }
