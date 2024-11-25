@@ -147,7 +147,7 @@ class ItemListPage extends StatelessWidget {
       ),
     );
   }
-
+  
   // CircleAvatar에 들어갈 이미지 형태가 2종류라서 체크하는 함수
   // false = assets, true = XFile
   bool is_CheckImageFile(String img) {
