@@ -28,12 +28,13 @@ class DishInfoWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'MENU',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.grey[700],
+                  'MENU',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black.withOpacity(0.8),
+                  ),
                 ),
-              ),
               const Divider(
                 thickness: 1,
               )
@@ -44,12 +45,13 @@ class DishInfoWidget extends StatelessWidget {
             controller: menuNameController,
             maxLines: 1,
             style: const TextStyle(
-              fontSize: 18,
+              fontSize: 24,
               fontWeight: FontWeight.normal,
             ),
             decoration: const InputDecoration(
               hintText: '이름을 입력해주세요.',
               hintStyle: TextStyle(
+                fontSize: 24,
                 color: Colors.grey,
               ),
               isDense: true,
@@ -62,7 +64,7 @@ class DishInfoWidget extends StatelessWidget {
             controller: menuSubNameController,
             maxLines: 1,
             style: const TextStyle(
-              fontSize: 14,
+              fontSize: 15,
               color: Color.fromARGB(255, 160, 173, 132),
             ),
             inputFormatters: [
@@ -73,7 +75,7 @@ class DishInfoWidget extends StatelessWidget {
             decoration: const InputDecoration(
               hintText: '영문 이름을 입력해주세요.',
               hintStyle: TextStyle(
-                fontSize: 14,
+                fontSize: 15,
                 color: Colors.grey,
               ),
               isDense: true,
@@ -86,6 +88,10 @@ class DishInfoWidget extends StatelessWidget {
           TextField(
             controller: menuPriceController,
             maxLines: 1,
+            maxLength: 9,
+            style: TextStyle(
+              fontSize: 16,
+            ),
             inputFormatters: [
               // 숫자만 입력
               FilteringTextInputFormatter.digitsOnly,
@@ -95,6 +101,7 @@ class DishInfoWidget extends StatelessWidget {
               hintText: '₩ 가격을 입력해 주세요.',
               hintStyle: TextStyle(
                 color: Colors.grey,
+                fontSize: 16,
               ),
             ),
             onChanged: (text) {},
