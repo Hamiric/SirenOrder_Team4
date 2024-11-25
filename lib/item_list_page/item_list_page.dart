@@ -83,7 +83,8 @@ class ItemListPage extends StatelessWidget {
     return Scaffold(
       appBar: SirenAppBar(
         actionIcon: Icons.add, // AppBar의 우측 아이콘 설정
-        onActionPressed: () { // 아이콘 클릭 시 동작 설정
+        onActionPressed: () {
+          // 아이콘 클릭 시 동작 설정
           Navigator.pushNamed(context, '/item_add_page');
         },
       ),
@@ -106,6 +107,8 @@ class ItemListPage extends StatelessWidget {
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
+                  softWrap: false,
+                  overflow: TextOverflow.fade,
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -114,6 +117,8 @@ class ItemListPage extends StatelessWidget {
                     fontSize: 12,
                     color: Colors.grey,
                   ),
+                  softWrap: false,
+                  overflow: TextOverflow.fade,
                 ),
               ],
             ),
