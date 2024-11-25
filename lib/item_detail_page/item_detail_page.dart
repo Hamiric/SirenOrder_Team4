@@ -47,7 +47,11 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
           Expanded(
             child: ListView(
               children: [
-                imageWidget(drink.img),
+                Container(
+                  width: 413,
+                  height: 297,
+                  child: imageWidget(drink.img),
+                ),
                 SizedBox(height: 35),
                 MenuScript(
                   isStarred: isStarred,
