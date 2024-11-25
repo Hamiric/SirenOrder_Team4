@@ -24,7 +24,9 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SirenAppBar(),
+      appBar: SirenAppBar(
+        onAcionPressed: () {},
+      ),
       body: Column(
         children: [
           Expanded(

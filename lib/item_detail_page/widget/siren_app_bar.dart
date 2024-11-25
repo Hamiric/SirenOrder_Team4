@@ -1,50 +1,50 @@
 import 'package:flutter/material.dart';
 
-class SirenAppBar extends StatelessWidget implements PreferredSizeWidget{
-  const SirenAppBar({super.key});
+class SirenAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final VoidCallback? onAcionPressed;
+  final IconData actionIcon;
+    
+  const SirenAppBar({
+    super.key,
+    this.onAcionPressed,
+    this.actionIcon = Icons.share_outlined, // 기본 아이콘임. AppBar안에 actionIcon: Icons.아이콘이름, /n onActionPressed: (){}, 이렇게 변경해서 사용함
+  });
 
   @override
   Widget build(BuildContext context) {
-    return PreferredSize(
-      preferredSize: const Size.fromHeight(100),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 17),
-        child: AppBar(
-            backgroundColor: Colors.transparent,
-            title: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(width: 0),
-                Text.rich(
-                  TextSpan(children: [
-                    TextSpan(
-                      text: 'S',
-                      style: TextStyle(
-                        color: Color(0xFFAAB396),
-                        fontSize: 32,
-                      ),
-                    ),
-                    TextSpan(
-                      text: 'iren',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 32,
-                      ),
-                    ),
-                  ]),
+    return AppBar(
+        backgroundColor: Colors.transparent,
+        title: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(width: 0),
+            Text.rich(
+              TextSpan(children: [
+                TextSpan(
+                  text: 'S',
+                  style: TextStyle(
+                    color: Color(0xFFAAB396),
+                    fontSize: 32,
+                  ),
                 ),
-                IconButton(
-                  icon: const Icon(Icons.share_outlined, color: Colors.black),
-                  onPressed: () {},
+                TextSpan(
+                  text: 'iren',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 32,
+                  ),
                 ),
-              ],
-            )),
-      ),
-    );
+              ]),
+            ),
+            IconButton(
+              icon: Icon(actionIcon, color: Colors.black),
+              onPressed: onAcionPressed,
+            ),
+          ],
+        ));
   }
-
   @override
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight); // 기본 AppBar 높이
 
 }
