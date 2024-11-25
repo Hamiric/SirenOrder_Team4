@@ -14,36 +14,34 @@ class SirenAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
         backgroundColor: Colors.transparent,
-        title: SafeArea(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(width: 0),
-              Text.rich(
-                TextSpan(children: [
-                  TextSpan(
-                    text: 'S',
-                    style: TextStyle(
-                      color: Color(0xFFAAB396),
-                      fontSize: 32,
-                    ),
+        title: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(width: 0),
+            Text.rich(
+              TextSpan(children: [
+                TextSpan(
+                  text: 'S',
+                  style: TextStyle(
+                    color: Color(0xFFAAB396),
+                    fontSize: 32,
                   ),
-                  TextSpan(
-                    text: 'iren',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 32,
-                    ),
+                ),
+                TextSpan(
+                  text: 'iren',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 32,
                   ),
-                ]),
-              ),
-              IconButton(
-                icon: Icon(actionIcon, color: Colors.black),
-                onPressed: onAcionPressed,
-              ),
-            ],
-          ),
+                ),
+              ]),
+            ),
+            IconButton(
+              icon: Icon(actionIcon, color: Colors.black),
+              onPressed: onAcionPressed,
+            ),
+          ],
         ));
   }
   @override
