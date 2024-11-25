@@ -33,6 +33,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: SirenAppBar(
+        actionIcon: Icons.share_outlined,
         onAcionPressed: () {},
       ),
       body: Column(

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class SirenAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onAcionPressed;
-  final IconData actionIcon;
+  final IconData? actionIcon;
     
   const SirenAppBar({
     super.key,
     this.onAcionPressed,
-    this.actionIcon = Icons.share_outlined, // 기본 아이콘임. AppBar안에 actionIcon: Icons.아이콘이름, /n onActionPressed: (){}, 이렇게 변경해서 사용함
+    this.actionIcon, // 기본 아이콘임. AppBar안에 actionIcon: Icons.아이콘이름, /n onActionPressed: (){}, 이렇게 변경해서 사용함
   });
 
   @override
