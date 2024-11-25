@@ -1,58 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:team4_groupproject/item_detail_page/widget/bottom_bar.dart';
 import 'package:team4_groupproject/item_detail_page/widget/menu_script.dart';
+import 'package:team4_groupproject/item_detail_page/widget/siren_app_bar.dart';
 
-class ItemDetailPage extends StatelessWidget {
+class ItemDetailPage extends StatefulWidget {
   const ItemDetailPage({super.key});
+
+  @override
+  State<ItemDetailPage> createState() => _ItemDetailPageState();
+}
+
+class _ItemDetailPageState extends State<ItemDetailPage> {
+  int _quantity = 1; // 초기 수량
+  int _itemPrice = 5000; // 화면에 보여지는 단가
+  int get _totalPrice => _quantity * _itemPrice; // 총 가격 계산 (getter)
+
+  void _changeQuantity(int newQuantity) {
+    setState(() {
+      _quantity = newQuantity;
+    });
+  }
+
+  bool isStarred = false;
+
+  void touchStar() {
+    setState(() {
+      isStarred = !isStarred;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(100),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 17),
-          child: AppBar(
-              backgroundColor: Colors.transparent,
-              title: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.chevron_left, color: Colors.black),
-                    onPressed: () {},
-                  ),
-                  Text.rich(
-                    TextSpan(children: [
-                      TextSpan(
-                        text: 'S',
-                        style: TextStyle(
-                          color: Color(0xFFAAB396),
-                          fontSize: 32,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'iren',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 32,
-                        ),
-                      ),
-                    ]),
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.share_outlined, color: Colors.black),
-                    onPressed: () {},
-                  ),
-                ],
-              )),
-        ),
+      appBar: SirenAppBar(
+        onAcionPressed: () {},
       ),
       body: Column(
         children: [
-          Image.asset('assets/menu.jpg'),
-          MenuScript(),
-          BottomBar(),
+          Expanded(
+            child: ListView(
+              children: [
+                Image.asset('assets/menu.jpg'),
+                SizedBox(height: 35),
+                MenuScript(
+                  isStarred: isStarred,
+                  onStarTouch: touchStar,
+                ),
+              ],
+            )),
+          BottomBar(
+            quantity: _quantity,
+            totalPrice: _totalPrice,
+            onQuantityChanged: _changeQuantity,
+          ),
         ],
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:team4_groupproject/drink.dart';
+import 'package:team4_groupproject/item_list_page/item_list_page.dart';
 
 class RegisterButton extends StatelessWidget {
   RegisterButton(
@@ -137,22 +138,19 @@ void showCupertino(
                     isFavorite: false,
                   );
                   
-                  /*
                   // item_list_page로
                   Navigator.pushAndRemoveUntil(
                     context,
                     CupertinoDialogRoute(
-                      builder: (context) => ItemListPage(drink: newDrink),
+                      builder: (context) => ItemListPage(newDrink: newDrink),
                       context: context
                     ),
                     (route) => false,
                   );
-                  */
-
-                  Navigator.pop(context);
                 } else {
                   // 실패했을 경우 팝업만 끄기
                   Navigator.pop(context);
+                  FocusScope.of(context).unfocus();
                 }
               },
             )
