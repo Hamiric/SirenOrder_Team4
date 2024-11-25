@@ -48,12 +48,6 @@ class MenuScript extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-                IconButton(
-                  onPressed: onStarTouch, 
-                  icon: Icon(
-                    isStarred ? Icons.star : Icons.star_border_outlined,
-                  ),
-                ),
               ],
             ),
           ),
