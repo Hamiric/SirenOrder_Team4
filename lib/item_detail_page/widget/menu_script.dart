@@ -5,6 +5,13 @@ class MenuScript extends StatelessWidget {
   int getPrice() {
     return itemPrice;
   }
+  final bool isStarred;
+  final VoidCallback onStarTouch;
+
+  MenuScript({
+    required this.isStarred,
+    required this.onStarTouch,
+  });
 
 
   @override
@@ -25,13 +32,24 @@ class MenuScript extends StatelessWidget {
                 ),
               ),
             ),
-            child: Text(
-              'MENU',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.black.withOpacity(0.8),
-              ),
+            child: Row(
+              children: [
+                Text(
+                  'MENU',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black.withOpacity(0.8),
+                  ),
+                ),
+                Spacer(),
+                IconButton(
+                  onPressed: onStarTouch, 
+                  icon: Icon(
+                    isStarred ? Icons.star : Icons.star_border_outlined,
+                  ),
+                ),
+              ],
             ),
           ),
           SizedBox(height: 8),

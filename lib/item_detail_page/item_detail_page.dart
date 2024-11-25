@@ -21,6 +21,14 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
     });
   }
 
+  bool isStarred = false;
+
+  void touchStar() {
+    setState(() {
+      isStarred = !isStarred;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +42,10 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
               children: [
                 Image.asset('assets/menu.jpg'),
                 SizedBox(height: 35),
-                MenuScript(),
+                MenuScript(
+                  isStarred: isStarred,
+                  onStarTouch: touchStar,
+                ),
               ],
             )),
           BottomBar(
