@@ -13,8 +13,8 @@ class ItemListPage extends StatelessWidget {
         name: '초코 플랫 화이트',
         code: 'Choco Flat White',
         img: 'assets/menu.jpg',
-        description: '오스트레일리아와 뉴질랜드에서 가장 즐겨먹는 커피 에스프레소의 미세한 입자의 마이크로 폼 스팀 밀크를 혼합해 만든 플랫화이트는 아주 고운 스팀밀크를 사용해 실크나 벨벳 질감에 비유될 만큼 부드럽습니다 카페라떼와 카푸치노의 차이를 들자면 플랫화이트가 더 부드럽고 커피향이 진한 편입니다',
-        price: 6200,
+        description: '저희 카페에서 고안한\n새로운 플랫 화이트 입니다.\n\n기존의 우유 스팀으로 거품을 올린 것과는 다르게\n스팀을 치기 전, 발로나 초코를 우유에 넣어줍니다.\n\n정말로 맛있습니다.\n\n여러분의 구매 버튼만 있다면\n저희 집 특제 초코 플랫 화이트를\n현실에서 직접 맛보실 수 있습니다!\n많이 많이 눌러 주세요!',
+        price: 5000,
         count: 0,
         isFavorite: false),
   ];
