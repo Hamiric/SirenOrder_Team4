@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SirenAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onActionPressed;
   final IconData? actionIcon;
-    
+
   const SirenAppBar({
     super.key,
     this.onActionPressed,
@@ -13,38 +13,37 @@ class SirenAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        backgroundColor: Colors.transparent,
-        title: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox(width: 0),
-            Text.rich(
-              TextSpan(children: [
-                TextSpan(
-                  text: 'S',
-                  style: TextStyle(
-                    color: Color(0xFFAAB396),
-                    fontSize: 32,
-                  ),
-                ),
-                TextSpan(
-                  text: 'iren',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 32,
-                  ),
-                ),
-              ]),
+      backgroundColor: Colors.transparent,
+      centerTitle: true,
+      title: Text.rich(
+        TextSpan(children: [
+          TextSpan(
+            text: 'S',
+            style: TextStyle(
+              color: Color(0xFFAAB396),
+              fontSize: 32,
             ),
-            IconButton(
-              icon: Icon(actionIcon, color: Colors.black),
-              onPressed: onActionPressed,
+          ),
+          TextSpan(
+            text: 'iren',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 32,
             ),
-          ],
-        ));
+          ),
+        ]),
+      ),
+      actions: [
+        IconButton(
+          icon: Icon(actionIcon, color: Colors.black),
+          onPressed: onActionPressed,
+        ),
+        SizedBox(width: 5,)
+      ],
+    );
   }
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight); // 기본 AppBar 높이
 
+  @override
+  Size get preferredSize =>
+      const Size.fromHeight(kToolbarHeight); // 기본 AppBar 높이
 }
