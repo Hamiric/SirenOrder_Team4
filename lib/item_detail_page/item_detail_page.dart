@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:team4_groupproject/drink.dart';
 import 'package:team4_groupproject/item_detail_page/widget/bottom_bar.dart';
 import 'package:team4_groupproject/item_detail_page/widget/menu_script.dart';
@@ -39,7 +40,16 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
     return Scaffold(
       appBar: SirenAppBar(
         actionIcon: Icons.share_outlined,
-        onActionPressed: () {},
+        onActionPressed: () async {
+          const url = 'https://www.starbucks.co.kr/menu/index.do'; // String 타입
+          final uri = Uri.parse(url); // String -> Uri 변환
+
+          if (await canLaunchUrl(uri)) {
+            await launchUrl(uri);
+          } else {
+            throw 'Could not launch $url';
+          }
+        },
       ),
       body: SafeArea(
         child: Column(
