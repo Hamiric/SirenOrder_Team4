@@ -45,7 +45,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
           final uri = Uri.parse(url); // String -> Uri 변환
 
           if (await canLaunchUrl(uri)) {
-            await launchUrl(uri);
+            await launchUrl(uri, mode: LaunchMode.externalApplication); // 외부 브라우저에서 여는 방식
           } else {
             throw 'Could not launch $url';
           }
