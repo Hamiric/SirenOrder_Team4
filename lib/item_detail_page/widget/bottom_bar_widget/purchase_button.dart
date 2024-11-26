@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:team4_groupproject/drink.dart';
 
 class PurchaseButton extends StatelessWidget {
-  final String productName = '초코 플랫 화이트';
+  final String productName;
   final int quantity;
   final Drink drink;
-  const PurchaseButton({required this.quantity, required this.drink});
+
+  const PurchaseButton({
+    required this.productName,
+    required this.quantity,
+    required this.drink,
+  });
 
   @override
   Widget build(BuildContext context) {

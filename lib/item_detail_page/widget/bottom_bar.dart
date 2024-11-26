@@ -57,6 +57,7 @@ class BottomBar extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: PurchaseButton(
+                productName: drink.name,
                 quantity: quantity,
                 drink: drink,
               ),
