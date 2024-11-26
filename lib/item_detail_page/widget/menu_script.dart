@@ -69,7 +69,7 @@ class MenuScript extends StatelessWidget {
             ),
           ),
           Text(
-            '₩ ${numberFormat(drink.price)}',
+            '${numberFormat(drink.price)}',
             style: TextStyle(
               fontSize: 12,
               color: Colors.black.withOpacity(0.5),
