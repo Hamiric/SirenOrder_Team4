@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:team4_groupproject/drink.dart';
 import 'package:team4_groupproject/item_detail_page/widget/siren_app_bar.dart';
 import 'package:team4_groupproject/item_list_page/item_list_page.dart';
+import 'package:team4_groupproject/number_format.dart';
 
 class ItemCartPage extends StatefulWidget {
   const ItemCartPage({super.key});
@@ -149,7 +150,7 @@ class _ItemCartPageState extends State<ItemCartPage> {
                 const Spacer(),
                 // 음료 총 가격
                 Text(
-                  '${drink.price * drink.count} 원',
+                  numberFormat(drink.price * drink.count),
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 )
               ],
