@@ -24,11 +24,12 @@ SirenOrder_Team4는 카페 주문 시스템을 간편하게 구현한 모바일 
 :memo:주요 기능
 ===================
 
-메뉴 관리
+메뉴 페이지
 ------
 * 음료 및 메뉴 리스트를 제공합니다.
-* 상세 페이지를 통해 개별 메뉴 설명 및 가격 확인 가능합니다..
-* 새로운 음료를 등록하는 기능이 있습니다.
+* 메뉴를 클릭하면 상세 페이지로 넘어갈 수 있습니다.
+* 플러스 버튼을 눌러 새로운 음료를 등록하는 기능페이지로 넘어갑니다
+* 장바구니 플로팅 버튼을 눌러 장바구니 페이지로 넘어갑니다.
 
 <details>
 <summary>미리보기</summary>
@@ -41,7 +42,7 @@ SirenOrder_Team4는 카페 주문 시스템을 간편하게 구현한 모바일 
 </details>
 
 
-장바구니
+장바구니 페이지
 --------------
 * 메뉴를 장바구니에 추가 혹은 삭제가 가능합니다.
 * 장바구니에서 주문을 최종 확인하고 진행합니다.
@@ -51,6 +52,37 @@ SirenOrder_Team4는 카페 주문 시스템을 간편하게 구현한 모바일 
 <div markdown="1">
 
 >![image](https://github.com/user-attachments/assets/b6f66a65-9d15-4214-9385-7a1dc4f9fe86)
+
+ <br>
+</div>
+</details>
+
+메뉴 상세 페이지
+----------------
+* 메뉴 사진, 이름, 영어이름, 가격, 설명을 제공합니다.
+* 원하는 수량만큼 구매할 수 있습니다.
+
+<details>
+<summary>미리보기</summary>
+<div markdown="1">
+
+![image](https://github.com/user-attachments/assets/a45c5be7-29fb-41c7-80e4-37667204b935)
+
+ <br>
+</div>
+</details>
+
+메뉴 등록 페이지
+---------------------------------
+*새로운 메뉴의 이름, 영문 이름, 가격, 이미지, 설명을 입력하여 등록가능합니다.
+
+<details>
+<summary>미리보기</summary>
+<div markdown="1">
+
+![image](https://github.com/user-attachments/assets/08db47eb-0142-4c00-871e-cb40ca966795)
+
+
 
  <br>
 </div>
@@ -110,13 +142,11 @@ url_launcher: ^6.3.1
 
 :memo:Technologies & Tools :memo:
 ==================
-<img src="https://img.shields.io/badge/flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/>
 <img src ="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white">
-<img src ="https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white">
-<img src ="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white">
+<img src ="https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white"> <img src ="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white">
 
 팀로고
 =========
