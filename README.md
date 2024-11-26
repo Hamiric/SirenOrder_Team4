@@ -1,13 +1,19 @@
 4조 사이렌 오더 어플
 ======================
-SirenOrder_Team4는 카페 주문 시스템을 간편하게 구현한 모바일 애플리케이션 프로젝트입니다. 고객이 메뉴를 선택하고, 장바구니에 추가하며, 최종적으로 주문을 완료할 수 있도록 설계된 Flutter 기반 애플리케이션입니다. 또한 메뉴 등록이 가능합니다.   
+SirenOrder_Team4는 카페 주문 시스템을 간편하게 구현한 모바일 애플리케이션 프로젝트입니다.     
+고객이 메뉴를 선택하고, 장바구니에 추가하며, 최종적으로 주문을 완료할 수 있도록 설계된 Flutter 기반 애플리케이션입니다. 
+또한 메뉴 등록이 가능합니다.    
+
+프로젝트 기간
+================
+2024.11.21 ~ 2024.11.27
 
 👨‍👩‍👧‍👦Our Team
 ============
-권유진(팀장): 상품 상세 페이지 만들기
-황상진(팀장): 상품 등록 페이지 만들
-김서후(팀원): 장바구니 페이지 만들기
-김고은(팀원): 상품 목록 페이지 만들기
+권유진(팀장): 상품 상세 페이지 만들기     
+황상진(팀장): 상품 등록 페이지 만들기     
+김서후(팀원): 장바구니 페이지 만들기    
+김고은(팀원): 상품 목록 페이지 만들기     
 
 👊[프로젝트 노션 바로가기](https://teamsparta.notion.site/4-1382dc3ef514819791d5c5c5dffa48a4#1382dc3ef51481a6b90fd5909a065776)
 
@@ -59,10 +65,12 @@ UI/UX
 
 ⚙Development Environment
 ===================
-environment:sdk: ^3.5.4 , dependencies: flutter: sdk: flutter   cupertino_icons: ^1.0.8
-  image_picker: ^1.1.2
-  intl: ^0.19.0
-  url_launcher: ^6.3.1
+environment:sdk: ^3.5.4      
+dependencies: flutter: sdk: flutter    
+cupertino_icons: ^1.0.8    
+image_picker: ^1.1.2         
+intl: ^0.19.0          
+url_launcher: ^6.3.1               
 
 :pushpin: Trouble Shooting
 ============================
@@ -73,7 +81,7 @@ environment:sdk: ^3.5.4 , dependencies: flutter: sdk: flutter   cupertino_icons:
 * 이미지 로딩관련 문제
 * sdk 버전 불일치 문제
 
-:memo:Technologies & Tools (FE):memo:
+:memo:Technologies & Tools :memo:
 ==================
 <img src="https://img.shields.io/badge/flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white">
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
@@ -82,3 +90,7 @@ environment:sdk: ^3.5.4 , dependencies: flutter: sdk: flutter   cupertino_icons:
 <img src ="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white">
 <img src ="https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white">
 <img src ="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white">
+
+팀로고
+=========
+![image](https://github.com/user-attachments/assets/52cdcef7-3726-47f8-a3e7-97cf6c8ba7ce)
