@@ -69,6 +69,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                   onStarTouch: touchStar,
                   drink: drink,
                 ),
+                SizedBox(height: 30,),
               ],
             )),
             BottomBar(

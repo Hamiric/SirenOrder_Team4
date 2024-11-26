@@ -14,6 +14,7 @@ class SirenAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
+      scrolledUnderElevation: 0,
       centerTitle: true,
       title: Text.rich(
         TextSpan(children: [
