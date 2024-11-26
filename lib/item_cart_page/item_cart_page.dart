@@ -150,7 +150,7 @@ class _ItemCartPageState extends State<ItemCartPage> {
                 const Spacer(),
                 // 음료 총 가격
                 Text(
-                  numberFormat(drink.price * drink.count),
+                  numberFormat(drink.price * drink.count) + ' 원',
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 )
               ],

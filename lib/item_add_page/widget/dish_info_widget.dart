@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
+import 'package:team4_groupproject/number_format.dart';
 
 class DishInfoWidget extends StatelessWidget {
   const DishInfoWidget(
@@ -16,6 +18,9 @@ class DishInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    String priceFormat;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
