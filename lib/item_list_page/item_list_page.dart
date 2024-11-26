@@ -67,6 +67,41 @@ List<Drink> drinkList = [
       price: 4700,
       count: 0,
       isFavorite: false),
+  Drink(
+      name: '논알코올 홀리데이 패션 티 뱅쇼',
+      code: 'Non-alcoholic Holiday Vin Chaud Passion Tea',
+      img: 'assets/holiday_vin_chaud.jpg',
+      description:
+          '카베르네 쇼비뇽 와인 추출액이 들어간 베이스와 패션 탱고 티의 밸런스 좋은 조합 우러날 수록 풍미좋은 허브&스파이스백과'
+          ' 신선한 오렌지가 기분좋게 만들어 주는 논알코올 뱅쇼',
+      price: 5600,
+      count: 0,
+      isFavorite: false),
+  Drink(
+      name: '티라미수 초콜릿',
+      code: 'Tiramisu Chocolate',
+      img: 'assets/tiramisu_chocolate.jpg',
+      description: '리저브 다크 초콜릿을 활용하여 초콜릿 풍미 가득한 디저트 타입의 티라미수 초콜릿',
+      price: 6000,
+      count: 0,
+      isFavorite: false),
+  Drink(
+      name: '스팀 우유',
+      code: 'Steamed Milk',
+      img: 'assets/steamed_milk.jpg',
+      description: '부드럽고 담백한 따뜻한 우유',
+      price: 4500,
+      count: 0,
+      isFavorite: false),
+  Drink(
+      name: '에스프레소',
+      code: 'Espresso',
+      img: 'assets/espresso.jpg',
+      description:
+          '스타벅스 에스프레소는 향기로운 크레마 층과 바디 층, 하트 층으로 이루어져 있으며, 입안 가득히 커피와 달콤한 카라멜 향이 느껴지는 커피 음료',
+      price: 4500,
+      count: 0,
+      isFavorite: false),
 ];
 
 class ItemListPage extends StatelessWidget {
@@ -88,50 +123,52 @@ class ItemListPage extends StatelessWidget {
           Navigator.pushNamed(context, '/item_add_page');
         },
       ),
-      body: ListView.builder(
-        itemCount: drinkList.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: CircleAvatar(
-                backgroundImage: is_CheckImageFile(drinkList[index].img)
-                    ? FileImage(File(drinkList[index].img))
-                    : AssetImage(drinkList[index].img) as ImageProvider,
-                backgroundColor: const Color(0xFFAAB396),
-                radius: 40),
-            title: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  drinkList[index].name,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+      body: SafeArea(
+        child: ListView.builder(
+          itemCount: drinkList.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: CircleAvatar(
+                  backgroundImage: is_CheckImageFile(drinkList[index].img)
+                      ? FileImage(File(drinkList[index].img))
+                      : AssetImage(drinkList[index].img) as ImageProvider,
+                  backgroundColor: const Color(0xFFAAB396),
+                  radius: 40),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    drinkList[index].name,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
                   ),
-                  softWrap: false,
-                  overflow: TextOverflow.fade,
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  drinkList[index].code,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey,
+                  const SizedBox(height: 4),
+                  Text(
+                    drinkList[index].code,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey,
+                    ),
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
                   ),
-                  softWrap: false,
-                  overflow: TextOverflow.fade,
-                ),
-              ],
-            ),
-            subtitle: Text('${drinkList[index].price} 원'),
-            onTap: () {
-              Navigator.pushNamed(
-                context,
-                '/item_detail_page',
-                arguments: drinkList[index],
-              );
-            },
-          );
-        },
+                ],
+              ),
+              subtitle: Text('${drinkList[index].price} 원'),
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/item_detail_page',
+                  arguments: drinkList[index],
+                );
+              },
+            );
+          },
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
