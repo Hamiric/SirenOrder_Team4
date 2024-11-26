@@ -1,16 +1,40 @@
-# team4_groupproject
+4조 사이렌 오더 어플
+======================
+SirenOrder_Team4는 카페 주문 시스템을 간편하게 구현한 모바일 애플리케이션 프로젝트입니다. 고객이 메뉴를 선택하고, 장바구니에 추가하며, 최종적으로 주문을 완료할 수 있도록 설계된 Flutter 기반 애플리케이션입니다. 또한 메뉴 등록이 가능합니다.   
 
-A new Flutter project.
+주요 기능
+===================
 
-## Getting Started
+메뉴 관리
+------
+* 음료 및 메뉴 리스트를 제공하며, 상세 페이지를 통해 개별 메뉴 설명 및 가격 확인 가능.
+* 새로운 음료를 등록하는 기능
 
-This project is a starting point for a Flutter application.
+장바구니
+--------------
+* 메뉴를 장바구니에 추가 삭제   
+* 장바구니에서 주문을 최종 확인하고 진행
 
-A few resources to get you started if this is your first Flutter project:
+UI/UX
+---------------
+* 사용자 친화적인 인터페이스를 제공하여 직관적으로 사용 가능
+* SirenAppBar와 같은 커스텀 컴포넌트 활용   
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+이미지 관리
+------------
+* Asset에 이미지 파일 저장
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+주요 파일 설명
+==============
+1. drink.dart
+> Drink 클래스 정의, 음료의 정보를 담는 모델
+2. Splash.dart
+> 어플 실행시 로드되는 화면
+3. item_list_page.dart
+> 카페 음료 목록과 메뉴 상세 정보, 장바구니 목록으로 이동 가능한 페이지
+4. item_detail_page.dart
+> 카페 음료 상세 정보 설명, 장바구니에 추가 기능
+5. item_cart_page.dart
+> 장바구니에 담긴 목록 보여주기, 구매기능
+6. item_add_page.dart
+> 새로운 카페 음료 등록 기능
