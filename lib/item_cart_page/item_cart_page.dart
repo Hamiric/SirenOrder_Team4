@@ -1,8 +1,7 @@
 import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:team4_groupproject/drink.dart';
+import 'package:team4_groupproject/item_detail_page/widget/siren_app_bar.dart';
 import 'package:team4_groupproject/item_list_page/item_list_page.dart';
 
 class ItemCartPage extends StatefulWidget {
@@ -19,10 +18,11 @@ class _ItemCartPageState extends State<ItemCartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('장바구니'),
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   title: const Text('장바구니'),
+      //   centerTitle: true,
+      // ),
+      appBar: SirenAppBar(),
       body: SafeArea(
         child: Column(
           children: [
