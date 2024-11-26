@@ -43,7 +43,7 @@ class CounterWidget extends StatelessWidget{
               child: IconButton(
                 onPressed: () {
                   // 구매 수량 < 100 예외처리
-                  if (quantity < 100) onQuantityChanged(quantity + 1);
+                  if (quantity < 99) onQuantityChanged(quantity + 1);
                 },
                 icon: Icon(Icons.add),
               ),
