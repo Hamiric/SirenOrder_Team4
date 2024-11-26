@@ -19,8 +19,6 @@ class DishInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    String priceFormat;
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(

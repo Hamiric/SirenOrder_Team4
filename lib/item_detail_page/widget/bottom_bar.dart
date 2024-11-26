@@ -49,7 +49,7 @@ class BottomBar extends StatelessWidget {
                       bottom: 20,
                       right: 28,
                       child: Text(
-                        '${numberFormat(totalPrice)}원',
+                        '${numberFormat(totalPrice)}',
                         style: TextStyle(fontSize: 15, color: Colors.white),
                       )),
                 ],
