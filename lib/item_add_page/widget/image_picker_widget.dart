@@ -22,9 +22,6 @@ class ImagePickerWidget extends StatelessWidget {
         var image = await imagePicker.pickImage(source: ImageSource.gallery);
         if (image != null) {
           imageSelected(image);
-          print('이미지 선택');
-        } else {
-          print('선택하지 않음');
         }
       },
       child: Container(
