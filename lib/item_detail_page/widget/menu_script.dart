@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:team4_groupproject/drink.dart';
+import 'package:team4_groupproject/number_format.dart';
 
 class MenuScript extends StatelessWidget {
   int itemPrice = 5000;
@@ -68,7 +69,7 @@ class MenuScript extends StatelessWidget {
             ),
           ),
           Text(
-            '₩ ${drink.price}',
+            '₩ ${numberFormat(drink.price)}',
             style: TextStyle(
               fontSize: 12,
               color: Colors.black.withOpacity(0.5),

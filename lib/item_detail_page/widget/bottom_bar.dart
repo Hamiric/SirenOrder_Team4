@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:team4_groupproject/drink.dart';
 import 'package:team4_groupproject/item_detail_page/widget/bottom_bar_widget/counter_widget.dart';
 import 'package:team4_groupproject/item_detail_page/widget/bottom_bar_widget/purchase_button.dart';
+import 'package:team4_groupproject/number_format.dart';
 
 class BottomBar extends StatelessWidget {
   final int quantity;
@@ -48,7 +49,7 @@ class BottomBar extends StatelessWidget {
                       bottom: 20,
                       right: 28,
                       child: Text(
-                        '$totalPrice원',
+                        '${numberFormat(totalPrice)}원',
                         style: TextStyle(fontSize: 15, color: Colors.white),
                       )),
                 ],
@@ -57,6 +58,7 @@ class BottomBar extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: PurchaseButton(
+                productName: drink.name,
                 quantity: quantity,
                 drink: drink,
               ),
