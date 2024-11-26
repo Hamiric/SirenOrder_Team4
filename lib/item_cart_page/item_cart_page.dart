@@ -18,10 +18,6 @@ class _ItemCartPageState extends State<ItemCartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('장바구니'),
-      //   centerTitle: true,
-      // ),
       appBar: SirenAppBar(),
       body: SafeArea(
         child: Column(
@@ -206,9 +202,7 @@ class _ItemCartPageState extends State<ItemCartPage> {
                       try {
                         dList[i].count = 0;
                         dList.removeAt(i);
-                      } catch (e) {
-                        print("오류 발생: $e");
-                      }
+                      } catch (e) {}
                     });
                     Navigator.of(context).pop(); // 삭제 버튼 동작
                   },
