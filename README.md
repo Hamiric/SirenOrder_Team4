@@ -46,11 +46,11 @@ SirenOrder_Team4는 카페 주문 시스템을 간편하게 구현한 모바일 
 * 메뉴를 장바구니에 추가 혹은 삭제가 가능합니다.
 * 장바구니에서 주문을 최종 확인하고 진행합니다.
 
-><details>
+<details>
 <summary>미리보기</summary>
 <div markdown="1">
 
-![image](https://github.com/user-attachments/assets/b6f66a65-9d15-4214-9385-7a1dc4f9fe86)
+>![image](https://github.com/user-attachments/assets/b6f66a65-9d15-4214-9385-7a1dc4f9fe86)
 
  <br>
 </div>
